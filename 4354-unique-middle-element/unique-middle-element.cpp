@@ -1,13 +1,14 @@
 class Solution {
 public:
     bool isMiddleElementUnique(vector<int>& nums){
-        unordered_map<int,int> freq;
-        for(int i:nums){
-            freq[i]++;
-        }
         int n=nums.size();
-        if(freq[nums[n/2]]>1) return false;
-        return true;
-        
+        int mid=n/2;
+        int count=0;
+        for(int i=0;i<n;i++){
+            if(nums[i]==nums[mid]){
+                count++;
+            }
+        }
+        return count==1;
     }
 };
