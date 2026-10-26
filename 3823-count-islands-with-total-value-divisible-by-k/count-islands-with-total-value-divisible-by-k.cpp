@@ -6,10 +6,10 @@ public:
         if(i<0 || i>=n || j<0 || j>=m || grid[i][j]==0){
             return 0;
         }
-long long current_sum = grid[i][j];
-        grid[i][j] = 0; // Mark as visited by setting to 0
         
-        // 2. Traverse all 4 directions and add to sum
+        long long current_sum = grid[i][j];
+        grid[i][j] = 0; 
+        
         current_sum += dfs(grid, i + 1, j);
         current_sum += dfs(grid, i - 1, j);
         current_sum += dfs(grid, i, j + 1);
